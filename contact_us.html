@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Biodata</title>
+    <title>Contact Us</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/x-icon" href="favicon.treasure.ico" />
   </head>
@@ -60,136 +60,154 @@
         </ul>
       </nav>
     </header>
-
-    <script>
-      const menuToggle = document.getElementById("menu-toggle");
-      const menu = document.getElementById("menu");
-      const lines = menuToggle.querySelectorAll("span");
-
-      menuToggle.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-        lines[0].classList.toggle("rotate-45");
-        lines[0].classList.toggle("top-4");
-        lines[2].classList.toggle("-rotate-45");
-        lines[2].classList.toggle("top-4");
-        lines[1].classList.toggle("opacity-0");
-      });
-    </script>
-
-    <style>
-      @media (max-width: 768px) {
-        #menu {
-          position: absolute;
-          top: 100%;
-          left: 0;
-          right: 0;
-          background: white;
-          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-      }
-    </style>
-    <br /><br /><br /><br /><br /><br />
-
-    <main>
-      <br />
-      <br />
-      <br />
-      <br />
-      <h1 class="text-3xl font-bold mb-8">Contact Us</h1>
-
-      <form onsubmit="showAlert(); return false;">
-        <label for="full_name">Full Name:</label>
-        <input
-          type="text"
-          id="full_name"
-          name="full_name"
-          required
-          class="border border-gray-400 p-1 mt-1 mb-2"
-        /><br />
-
-        <label for="student_id">Student ID (NIM):</label>
-        <input
-          type="text"
-          id="student_id"
-          name="student_id"
-          required
-          class="border border-gray-400 p-1 mt-1 mb-2"
-        /><br />
-
-        <label for="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          class="border border-gray-400 p-1 mt-1 mb-2"
-        /><br />
-
-        <label for="faculty_major">Faculty/Major:</label>
-        <input
-          type="text"
-          id="faculty_major"
-          name="faculty_major"
-          required
-          class="border border-gray-400 p-1 mt-1 mb-2"
-        /><br />
-
-        <label for="birthdate">Birthdate:</label>
-        <input
-          type="datetime-local"
-          id="birthdate"
-          name="birthdate"
-          required
-          class="border border-gray-400 p-1 mt-1 mb-2"
-        /><br />
-
-        <label for="gender">Gender:</label>
-        <input
-          type="radio"
-          id="male"
-          name="gender"
-          value="male"
-          class="border border-gray-400 p-1 mt-1 mb-2"
-        />
-        <label for="male">Male</label>
-        <input
-          type="radio"
-          id="female"
-          name="gender"
-          value="female"
-          class="border border-gray-400 p-1 mt-1 mb-2"
-        />
-        <label for="female">Female</label><br />
-
-        <label for="address">Address:</label><br />
-        <textarea
-          id="address"
-          name="address"
-          rows="3"
-          required
-          class="border border-gray-400 p-1 mt-1 mb-2"
-        ></textarea
-        ><br />
-
-        <label for="phone_number">Phone Number:</label><br />
-        <input
-          type="tel"
-          id="phone_number"
-          name="phone_number"
-          required
-          pattern="^[0-9]{10,15}$"
-          class="border border-gray-400 p-1 mt-1 mb-2"
-          placeholder="Enter a valid phone number (10-12 digits)"
-        /><br />
-
-        <input
-          type="submit"
-          value="Save"
-          class="border border-gray-400 p-1 mt-1 mb-2"
-        />
-      </form>
+    <br />
+    <br />
+    <br />
+    <main class="flex justify-center items-center min-h-screen bg-gray-100">
+      <div class="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full">
+        <h1 class="text-2xl font-bold text-center mb-6"></h1>
+        <div class="flex justify-center items-center min-h-screen bg-gray-100">
+          <div class="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full">
+            <h1 class="text-2xl font-bold text-center mb-6">
+              <br /><br />
+              Student Registration
+            </h1>
+            <form
+              onsubmit="showAlert(); return false;"
+              class="flex flex-col items-center space-y-4"
+            >
+              <div class="w-full">
+                <label for="full_name" class="block font-medium"
+                  >Full Name:</label
+                >
+                <input
+                  type="text"
+                  id="full_name"
+                  name="full_name"
+                  required
+                  class="border border-gray-300 rounded p-2 w-full"
+                />
+              </div>
+              <div class="w-full">
+                <label for="student_id" class="block font-medium"
+                  >Student ID (NIM):</label
+                >
+                <input
+                  type="text"
+                  id="student_id"
+                  name="student_id"
+                  required
+                  class="border border-gray-300 rounded p-2 w-full"
+                />
+              </div>
+              <div class="w-full">
+                <label for="email" class="block font-medium"
+                  >Email or Phone Number:</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="border border-gray-300 rounded p-2 w-full"
+                />
+              </div>
+              <div class="w-full">
+                <label for="faculty_major" class="block font-medium"
+                  >Faculty/Major:</label
+                >
+                <select
+                  id="faculty_major"
+                  name="faculty_major"
+                  required
+                  class="border border-gray-300 rounded p-2 w-full"
+                >
+                  <option value="" disabled selected>Select a faculty</option>
+                  <option value="economics">Faculty of Economics</option>
+                  <option value="philosophy">Faculty of Philosophy</option>
+                  <option value="nursing">Faculty of Nursing</option>
+                  <option value="information-technology">
+                    Faculty of Information Technology
+                  </option>
+                  <option value="education">Faculty of Education</option>
+                  <option value="mathematics-natural-sciences">
+                    Faculty of Mathematics and Natural Sciences
+                  </option>
+                </select>
+              </div>
+              <div class="w-full">
+                <label for="birthdate" class="block font-medium"
+                  >Birthdate:</label
+                >
+                <input
+                  type="datetime-local"
+                  id="birthdate"
+                  name="birthdate"
+                  required
+                  class="border border-gray-300 rounded p-2 w-full"
+                />
+              </div>
+              <div class="w-full">
+                <label class="block font-medium">Gender:</label>
+                <div class="space-x-4">
+                  <label>
+                    <input
+                      type="radio"
+                      id="male"
+                      name="gender"
+                      value="male"
+                      class="mr-2"
+                    />
+                    Male
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      id="female"
+                      name="gender"
+                      value="female"
+                      class="mr-2"
+                    />
+                    Female
+                  </label>
+                </div>
+              </div>
+              <div class="w-full">
+                <label for="address" class="block font-medium">Address:</label>
+                <textarea
+                  id="address"
+                  name="address"
+                  rows="3"
+                  required
+                  class="border border-gray-300 rounded p-2 w-full"
+                ></textarea>
+              </div>
+              <div class="w-full">
+                <label for="phone_number" class="block font-medium"
+                  >Phone Number:</label
+                >
+                <input
+                  type="tel"
+                  id="phone_number"
+                  name="phone_number"
+                  required
+                  pattern="^[0-9]{10,15}$"
+                  placeholder="Enter a valid phone number (10-12 digits)"
+                  class="border border-gray-300 rounded p-2 w-full"
+                />
+              </div>
+              <div class="text-center">
+                <input
+                  type="submit"
+                  value="Save"
+                  class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600 transition"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
-    <br /><br />
 
     <footer class="bg-gray-900 text-white py-10 mt-10">
       <div class="max-w-5xl mx-auto">
@@ -324,5 +342,11 @@
         </p>
       </div>
     </footer>
+
+    <script>
+      function showAlert() {
+        alert("Form submitted!");
+      }
+    </script>
   </body>
 </html>

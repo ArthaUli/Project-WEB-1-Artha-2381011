@@ -3,60 +3,136 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="Foto Treasure/favicon.treasure.ico" />
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Biodata</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.treasure.ico" />
   </head>
-  <body>
-    <header class="header__wrap">
-        <h1 class="siteTtl--link">TREASURE</h1>
-            <nav class="nav__menu">
-                <ul>
-                    <a href="#">NEWS</a>
-                    <a href="#">SCHEDULE</a>
-                    <a href="#">PROFILE</a>
-                    <a href="#">DISCOGRAPHY</a>
-                    <a href="#">MOVIE</a>
-                    <a href="#">LIVE</a>
-                    <a href="#">GOODS</a>
-                    <a href="#">POPUP STORE & CAFE</a>
-                    <a href="#">FANCLUB</a>
-                </ul>
-            </nav>
+  <body class="bg-white text-black font-sans">
+    <header class="fixed top-0 left-0 w-full bg-white p-5 shadow-md z-50">
+      <div class="flex items-center justify-between">
+        <button
+          id="menu-toggle"
+          class="absolute left-5 text-gray-700 focus:outline-none block md:hidden"
+        >
+          <div class="w-6 h-6 relative">
+            <span
+              class="block w-6 h-0.5 bg-gray-700 absolute top-2 left-0 transition-transform duration-300"
+            ></span>
+            <span
+              class="block w-6 h-0.5 bg-gray-700 absolute top-4 left-0 transition-opacity duration-300"
+            ></span>
+            <span
+              class="block w-6 h-0.5 bg-gray-700 absolute top-6 left-0 transition-transform duration-300"
+            ></span>
+          </div>
+        </button>
+        <h1 class="text-2xl md:text-4xl font-bold uppercase mx-auto">
+          <a href="#" class="hover:text-gray-700">Treasure</a>
         </h1>
-        <nav>
-            <ul>
-                <a href="index.html">Home</a>
-                <a href="biodata.html">Biodata</a>
-                <a href="contact_us.html">Contact Us</a>
-                <a href="About_Treasure.html">About Treasure</a>
-            </ul>
-        </nav>
+      </div>
+      <nav
+        id="menu"
+        class="hidden md:block mt-5 border-t-2 border-gray-200 md:border-none"
+      >
+        <ul
+          class="flex flex-col md:flex-row justify-center md:space-x-4 mt-4 text-lg font-semibold"
+        >
+          <li><a href="#" class="hover:text-gray-500">NEWS</a></li>
+          <li><a href="#" class="hover:text-gray-500">SCHEDULE</a></li>
+          <li><a href="#" class="hover:text-gray-500">PROFILE</a></li>
+          <li><a href="#" class="hover:text-gray-500">DISCOGRAPHY</a></li>
+          <li><a href="#" class="hover:text-gray-500">MOVIE</a></li>
+          <li><a href="#" class="hover:text-gray-500">LIVE</a></li>
+          <li><a href="#" class="hover:text-gray-500">GOODS</a></li>
+          <li>
+            <a href="#" class="hover:text-gray-500">POPUP STORE & CAFE</a>
+          </li>
+          <li><a href="#" class="hover:text-gray-500">FANCLUB</a></li>
+        </ul>
+        <ul
+          class="flex flex-col md:flex-row justify-center md:space-x-4 mt-4 text-lg font-semibold"
+        >
+          <li><a href="index.html">Home</a></li>
+          <li><a href="biodata.html">Biodata</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+          <li><a href="posts.html">Posts</a></li>
+          <li><a href="About_Treasure.html">About Treasure</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <main>
-      <h1>Contact Us</h1>
-      <form action="#" method="post">
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name" required /><br />
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const lines = menuToggle.querySelectorAll("span");
 
-        <label for="family_name">Family Name:</label>
-        <input type="text" id="family_name" name="family_name" required /><br />
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        lines[0].classList.toggle("rotate-45");
+        lines[0].classList.toggle("top-4");
+        lines[2].classList.toggle("-rotate-45");
+        lines[2].classList.toggle("top-4");
+        lines[1].classList.toggle("opacity-0");
+      });
+    </script>
+
+    <style>
+      @media (max-width: 768px) {
+        #menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: white;
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+      }
+    </style>
+    <br /><br /><br /><br /><br /><br />
+
+    <main>
+      <br />
+      <br />
+      <br />
+      <br />
+      <h1 class="text-3xl font-bold mb-8">Contact Us</h1>
+
+      <form onsubmit="showAlert(); return false;">
+        <label for="full_name">Full Name:</label>
+        <input
+          type="text"
+          id="full_name"
+          name="full_name"
+          required
+          class="border border-gray-400 p-1 mt-1 mb-2"
+        /><br />
+
+        <label for="student_id">Student ID (NIM):</label>
+        <input
+          type="text"
+          id="student_id"
+          name="student_id"
+          required
+          class="border border-gray-400 p-1 mt-1 mb-2"
+        /><br />
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required /><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="border border-gray-400 p-1 mt-1 mb-2"
+        /><br />
 
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required /><br />
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required /><br />
-
-        <label for="gender">Gender:</label>
-        <input type="radio" id="male" name="gender" value="male" />
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="female" />
-        <label for="female">Female</label><br />
+        <label for="faculty_major">Faculty/Major:</label>
+        <input
+          type="text"
+          id="faculty_major"
+          name="faculty_major"
+          required
+          class="border border-gray-400 p-1 mt-1 mb-2"
+        /><br />
 
         <label for="birthdate">Birthdate:</label>
         <input
@@ -64,177 +140,188 @@
           id="birthdate"
           name="birthdate"
           required
+          class="border border-gray-400 p-1 mt-1 mb-2"
         /><br />
 
-        <label for="religion">Religion:</label>
-        <select id="religion" name="religion" required>
-          <option value="">Select</option>
-          <option value="Islam">Islam</option>
-          <option value="Christian">Christian</option>
-          <option value="Buddha">Buddha</option>
-          <option value="Hindu">Hindu</option></select
+        <label for="gender">Gender:</label>
+        <input
+          type="radio"
+          id="male"
+          name="gender"
+          value="male"
+          class="border border-gray-400 p-1 mt-1 mb-2"
+        />
+        <label for="male">Male</label>
+        <input
+          type="radio"
+          id="female"
+          name="gender"
+          value="female"
+          class="border border-gray-400 p-1 mt-1 mb-2"
+        />
+        <label for="female">Female</label><br />
+
+        <label for="address">Address:</label><br />
+        <textarea
+          id="address"
+          name="address"
+          rows="3"
+          required
+          class="border border-gray-400 p-1 mt-1 mb-2"
+        ></textarea
         ><br />
 
-        <label for="address">Address:</label>
-        <textarea id="address" name="address" rows="3" required></textarea
-        ><br />
+        <label for="phone_number">Phone Number:</label><br />
+        <input
+          type="tel"
+          id="phone_number"
+          name="phone_number"
+          required
+          pattern="^[0-9]{10,15}$"
+          class="border border-gray-400 p-1 mt-1 mb-2"
+          placeholder="Enter a valid phone number (10-12 digits)"
+        /><br />
 
-        <label for="hobbies">Hobbies:</label><br />
-        <input type="checkbox" id="reading" name="hobbies" value="reading" />
-        <label for="reading">Reading</label>
-        <input type="checkbox" id="writing" name="hobbies" value="writing" />
-        <label for="writing">Writing</label><br />
-
-        <input type="submit" value="Save" />
+        <input
+          type="submit"
+          value="Save"
+          class="border border-gray-400 p-1 mt-1 mb-2"
+        />
       </form>
     </main>
+    <br /><br />
 
-    <footer class="footer__wrap">
-      <div class="footer__col">
-        <div class="footerLogo">
-          <a href="/treasure/" class="footerLogo--link">
-            <h1 class="footerLogo--img">TREASURE</h1>
-          </a>
-        </div>
-        <nav class="footerLinks">
-          <ul class="snsLists_footer">
-            <li class="snsList">
+    <footer class="bg-gray-900 text-white py-10 mt-10">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="text-2xl font-bold mb-6 text-center">TREASURE</h1>
+        <nav class="mb-6">
+          <ul class="flex justify-center space-x-6">
+            <li>
               <a
                 href="https://twitter.com/yg_treasure_jp"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/Logo_X.avif"
-                    alt="twitter"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">JAPAN OFFICIAL X</span>
+                <img
+                  src="Foto Treasure/Logo_X.avif"
+                  alt="Twitter Logo"
+                  class="w-10 h-10 bg-white rounded-full border-1 border-white"
+                />
+                JAPAN <br />
+                OFFICIAL X
               </a>
             </li>
-            <li class="snsList">
+            <li>
               <a
                 href="https://twitter.com/ygtreasuremaker"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/Logo_X.avif"
-                    alt="twitter"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">KOREA OFFICIAL X</span>
+                <img
+                  src="Foto Treasure/Logo_X.avif"
+                  alt="Twitter Logo"
+                  class="w-10 h-10 rounded-full border-1 border-white"
+                />
+                KOREA <br />
+                OFFICIAL X
               </a>
             </li>
-            <li class="snsList">
+            <li>
               <a
                 href="https://twitter.com/treasuremembers"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/Logo_X.avif"
-                    alt="twitter"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">MEMBER X</span>
+                <img
+                  src="Foto Treasure/Logo_X.avif"
+                  alt="Twitter Logo"
+                  class="w-10 h-10 rounded-full border-1 border-white"
+                />
+                MEMBER X
               </a>
             </li>
-            <li class="snsList">
+            <li>
               <a
                 href="https://www.instagram.com/yg_treasure_official/?hl=ja"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/Logo_IG.png"
-                    alt="instagram"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">Instagram</span>
+                <img
+                  src="Foto Treasure/Logo_IG.png"
+                  alt="Instagram Logo"
+                  class="w-10 h-10 rounded-full border-1 border-white"
+                />
+                Instagram
               </a>
             </li>
-            <li class="snsList">
+            <li>
               <a
                 href="https://lin.ee/jf8B1XZ"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/line.png"
-                    alt="line"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">LINE</span>
+                <img
+                  src="Foto Treasure/Logo_Line.png"
+                  alt="LINE Logo"
+                  class="w-10 h-10 bg-white rounded-full border-1 border-white"
+                />
+                Line
               </a>
             </li>
-            <li class="snsList">
+            <li>
               <a
                 href="https://www.youtube.com/channel/UCx9hXYOCvUYwrprEqe4ZQHA"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/Logo_YT.png"
-                    alt="twitter"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">YouTube</span>
+                <img
+                  src="Foto Treasure/Logo_YT.png"
+                  alt="YouTube Logo"
+                  class="w-10 h-10 rounded-full border-2 border-white"
+                />
+                YouTube
               </a>
             </li>
-            <li class="snsList">
+            <li>
               <a
                 href="https://www.facebook.com/OfficialTreasure/"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/FanClub.svg"
-                    alt="official fanclub"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">OFFICIAL<br />FANCLUB</span>
+                <img
+                  src="Foto Treasure/FanClub.svg"
+                  alt="fANCLUB Logo"
+                  class="w-10 h-10 bg-white rounded-full border-1 border-white"
+                />
+                OFFICIAL <br />
+                FANCLUB
               </a>
             </li>
-            <li class="snsList">
+            <li>
               <a
                 href="https://www.tiktok.com/@yg_treasure_tiktok"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/Logo_TT.jpg"
-                    alt="tiktok"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">TikTok</span>
+                <img
+                  src="Foto Treasure/Logo_TT.jpg"
+                  alt="TikTok Logo"
+                  class="w-10 h-10 rounded-full border-1 border-white"
+                />
+                TikTok
               </a>
             </li>
           </ul>
         </nav>
-      </div>
-      <div>
-        <ul>
-          <li><a href="https://fti.unai.edu/">FTI UNAI</a></li>
-          <li><a href="https://online.unai.edu">UNAI Website</a></li>
-          <li><a href="https://jurnal.unai.edu/">Jurnal Teika</a></li>
-        </ul>
+        <p class="text-center text-sm">
+          <a href="https://fti.unai.edu/" class="hover:underline">FTI UNAI</a>,
+          <a href="https://online.unai.edu" class="hover:underline"
+            >UNAI Website</a
+          >,
+          <a href="https://jurnal.unai.edu/" class="hover:underline"
+            >Jurnal Teika</a
+          >
+        </p>
       </div>
     </footer>
   </body>

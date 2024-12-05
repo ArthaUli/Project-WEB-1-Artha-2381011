@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biodata</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.treasure.ico" />
+  </head>
+  <body class="bg-white text-black font-sans">
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Posts</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="icon" type="image/x-icon" href="favicon.treasure.ico" />
+      </head>
+      <body class="bg-white text-black font-sans">
+        <header class="fixed top-0 left-0 w-full bg-white p-5 shadow-md z-50">
+            <div class="flex items-center justify-between">
+              <button id="menu-toggle" class="absolute left-5 text-gray-700 focus:outline-none block md:hidden">
+                <div class="w-6 h-6 relative">
+                  <span class="block w-6 h-0.5 bg-gray-700 absolute top-2 left-0 transition-transform duration-300"></span>
+                  <span class="block w-6 h-0.5 bg-gray-700 absolute top-4 left-0 transition-opacity duration-300"></span>
+                  <span class="block w-6 h-0.5 bg-gray-700 absolute top-6 left-0 transition-transform duration-300"></span>
+                </div>
+              </button>
+              <h1 class="text-2xl md:text-4xl font-bold uppercase mx-auto">
+                <a href="#" class="hover:text-gray-700">Treasure</a>
+              </h1>
+            </div>
+            <nav id="menu" class="hidden md:block mt-5 border-t-2 border-gray-200 md:border-none">
+              <ul class="flex flex-col md:flex-row justify-center md:space-x-4 mt-4 text-lg font-semibold">
+                <li><a href="#" class="hover:text-gray-500">NEWS</a></li>
+                <li><a href="#" class="hover:text-gray-500">SCHEDULE</a></li>
+                <li><a href="#" class="hover:text-gray-500">PROFILE</a></li>
+                <li><a href="#" class="hover:text-gray-500">DISCOGRAPHY</a></li>
+                <li><a href="#" class="hover:text-gray-500">MOVIE</a></li>
+                <li><a href="#" class="hover:text-gray-500">LIVE</a></li>
+                <li><a href="#" class="hover:text-gray-500">GOODS</a></li>
+                <li><a href="#" class="hover:text-gray-500">POPUP STORE & CAFE</a></li>
+                <li><a href="#" class="hover:text-gray-500">FANCLUB</a></li>
+              </ul>
+              <ul class="flex flex-col md:flex-row justify-center md:space-x-4 mt-4 text-lg font-semibold">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="biodata.html">Biodata</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="posts.html">Posts</a></li>
+                <li><a href="About_Treasure.html">About Treasure</a></li>
+              </ul>
+            </nav>
+          </header>
+          
+          <script>
+            const menuToggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+            const lines = menuToggle.querySelectorAll("span");
+          
+            menuToggle.addEventListener("click", () => {
+              menu.classList.toggle("hidden");
+              lines[0].classList.toggle("rotate-45");
+              lines[0].classList.toggle("top-4");
+              lines[2].classList.toggle("-rotate-45");
+              lines[2].classList.toggle("top-4");
+              lines[1].classList.toggle("opacity-0");
+            });
+          </script>
+          
+          <style>
+            @media (max-width: 768px) {
+              #menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+              }
+            }
+          </style> 
+    <br /><br />
+    <main class="pt-20 p-5">
+      <br /><br><br>
+      <h2 class="text-3xl font-bold mb-8 text-center">Post Details</h2>
+      <div id="post-container" class="max-w-4xl mx-auto"></div>
+    </main>
+    <br /><br />
+    <script>
+      async function fetchPost() {
+        const postContainer = document.getElementById("post-container");
+        const postId = 11;
+        const url = `https://jsonplaceholder.typicode.com/posts/${postId}`;
+
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            throw new Error("Failed to fetch post data");
+          }
+
+          const post = await response.json();
+
+          postContainer.innerHTML = `
+            <div class="bg-white shadow-md rounded-lg p-5">
+              <h3 class="text-xl font-bold mb-2">Post ID: ${post.id}</h3>
+              <h4 class="text-2xl font-semibold mb-4">${post.title}</h4>
+              <p class="text-gray-700">${post.body}</p>
+            </div>
+          `;
+        } catch (error) {
+          postContainer.innerHTML = `
+            <div class="bg-red-100 text-red-700 p-5 rounded-lg">
+              <p>Error: ${error.message}</p>
+            </div>
+          `;
+        }
+      }
+
+      fetchPost();
+    </script>
+    <br /><br /><br />
+    <footer class="bg-gray-900 text-white py-10 mt-10">
+        <footer class="bg-gray-900 text-white py-10 mt-10">
+            <div class="max-w-5xl mx-auto">
+              <h1 class="text-2xl font-bold mb-6 text-center">TREASURE</h1>
+              <nav class="mb-6">
+                <ul class="flex justify-center space-x-6">
+                  <li>
+                    <a
+                      href="https://twitter.com/yg_treasure_jp"
+                      target="_blank"
+                      class="hover:scale-110 transition-transform flex flex-col items-center text-center"
+                    >
+                      <img
+                        src="Foto Treasure/Logo_X.avif"
+                        alt="Twitter Logo"
+                        class="w-10 h-10 bg-white rounded-full border-1 border-white"
+                      />
+                      JAPAN <br />
+                      OFFICIAL X
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://twitter.com/ygtreasuremaker"
+                      target="_blank"
+                      class="hover:scale-110 transition-transform flex flex-col items-center text-center"
+                    >
+                      <img
+                        src="Foto Treasure/Logo_X.avif"
+                        alt="Twitter Logo"
+                        class="w-10 h-10 rounded-full border-1 border-white"
+                      />
+                      KOREA <br />
+                      OFFICIAL X
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://twitter.com/treasuremembers"
+                      target="_blank"
+                      class="hover:scale-110 transition-transform flex flex-col items-center text-center"
+                    >
+                      <img
+                        src="Foto Treasure/Logo_X.avif"
+                        alt="Twitter Logo"
+                        class="w-10 h-10 rounded-full border-1 border-white"
+                      />
+                      MEMBER X
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/yg_treasure_official/?hl=ja"
+                      target="_blank"
+                      class="hover:scale-110 transition-transform flex flex-col items-center text-center"
+                    >
+                      <img
+                        src="Foto Treasure/Logo_IG.png"
+                        alt="Instagram Logo"
+                        class="w-10 h-10 rounded-full border-1 border-white"
+                      />
+                      Instagram
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://lin.ee/jf8B1XZ"
+                      target="_blank"
+                      class="hover:scale-110 transition-transform flex flex-col items-center text-center"
+                    >
+                      <img
+                        src="Foto Treasure/Logo_Line.png"
+                        alt="LINE Logo"
+                        class="w-10 h-10 bg-white rounded-full border-1 border-white"
+                      />
+                      Line
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.youtube.com/channel/UCx9hXYOCvUYwrprEqe4ZQHA"
+                      target="_blank"
+                      class="hover:scale-110 transition-transform flex flex-col items-center text-center"
+                    >
+                      <img
+                        src="Foto Treasure/Logo_YT.png"
+                        alt="YouTube Logo"
+                        class="w-10 h-10 rounded-full border-2 border-white"
+                      />
+                      YouTube
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/OfficialTreasure/"
+                      target="_blank"
+                      class="hover:scale-110 transition-transform flex flex-col items-center text-center"
+                    >
+                      <img
+                        src="Foto Treasure/FanClub.svg"
+                        alt="fANCLUB Logo"
+                        class="w-10 h-10 bg-white rounded-full border-1 border-white"
+                      />
+                      OFFICIAL <br />
+                      FANCLUB
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tiktok.com/@yg_treasure_tiktok"
+                      target="_blank"
+                      class="hover:scale-110 transition-transform flex flex-col items-center text-center"
+                    >
+                      <img
+                        src="Foto Treasure/Logo_TT.jpg"
+                        alt="TikTok Logo"
+                        class="w-10 h-10 rounded-full border-1 border-white"
+                      />
+                      TikTok
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <p class="text-center text-sm">
+                <a href="https://fti.unai.edu/" class="hover:underline">FTI UNAI</a>,
+                <a href="https://online.unai.edu" class="hover:underline"
+                  >UNAI Website</a
+                >,
+                <a href="https://jurnal.unai.edu/" class="hover:underline"
+                  >Jurnal Teika</a
+                >
+              </p>
+            </div>
+          </footer>
+  </body>
+</html>

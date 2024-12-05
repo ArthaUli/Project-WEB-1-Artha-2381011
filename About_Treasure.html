@@ -3,233 +3,272 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="Foto Treasure/favicon.treasure.ico"
-    />
-    <title>Home - Treasure</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Biodata</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.treasure.ico" />
   </head>
-
-  <body>
-    <header class="header__wrap">
-        <h1 class="siteTtl--link">TREASURE</h1>
-            <nav class="nav__menu">
-                <ul>
-                    <a href="#">NEWS</a>
-                    <a href="#">SCHEDULE</a>
-                    <a href="#">PROFILE</a>
-                    <a href="#">DISCOGRAPHY</a>
-                    <a href="#">MOVIE</a>
-                    <a href="#">LIVE</a>
-                    <a href="#">GOODS</a>
-                    <a href="#">POPUP STORE & CAFE</a>
-                    <a href="#">FANCLUB</a>
-                </ul>
-            </nav>
+  <body class="bg-white text-black font-sans">
+    <header class="fixed top-0 left-0 w-full bg-white p-5 shadow-md z-50">
+      <div class="flex items-center justify-between">
+        <button
+          id="menu-toggle"
+          class="absolute left-5 text-gray-700 focus:outline-none block md:hidden"
+        >
+          <div class="w-6 h-6 relative">
+            <span
+              class="block w-6 h-0.5 bg-gray-700 absolute top-2 left-0 transition-transform duration-300"
+            ></span>
+            <span
+              class="block w-6 h-0.5 bg-gray-700 absolute top-4 left-0 transition-opacity duration-300"
+            ></span>
+            <span
+              class="block w-6 h-0.5 bg-gray-700 absolute top-6 left-0 transition-transform duration-300"
+            ></span>
+          </div>
+        </button>
+        <h1 class="text-2xl md:text-4xl font-bold uppercase mx-auto">
+          <a href="#" class="hover:text-gray-700">Treasure</a>
         </h1>
-        <nav>
-            <ul>
-                <a href="index.html">Home</a>
-                <a href="biodata.html">Biodata</a>
-                <a href="contact_us.html">Contact Us</a>
-                <a href="About_Treasure.html">About Treasure</a>
-            </ul>
-        </nav>
+      </div>
+      <nav
+        id="menu"
+        class="hidden md:block mt-5 border-t-2 border-gray-200 md:border-none"
+      >
+        <ul
+          class="flex flex-col md:flex-row justify-center md:space-x-4 mt-4 text-lg font-semibold"
+        >
+          <li><a href="#" class="hover:text-gray-500">NEWS</a></li>
+          <li><a href="#" class="hover:text-gray-500">SCHEDULE</a></li>
+          <li><a href="#" class="hover:text-gray-500">PROFILE</a></li>
+          <li><a href="#" class="hover:text-gray-500">DISCOGRAPHY</a></li>
+          <li><a href="#" class="hover:text-gray-500">MOVIE</a></li>
+          <li><a href="#" class="hover:text-gray-500">LIVE</a></li>
+          <li><a href="#" class="hover:text-gray-500">GOODS</a></li>
+          <li>
+            <a href="#" class="hover:text-gray-500">POPUP STORE & CAFE</a>
+          </li>
+          <li><a href="#" class="hover:text-gray-500">FANCLUB</a></li>
+        </ul>
+        <ul
+          class="flex flex-col md:flex-row justify-center md:space-x-4 mt-4 text-lg font-semibold"
+        >
+          <li><a href="index.html">Home</a></li>
+          <li><a href="biodata.html">Biodata</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+          <li><a href="posts.html">Posts</a></li>
+          <li><a href="About_Treasure.html">About Treasure</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <main>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const lines = menuToggle.querySelectorAll("span");
+
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        lines[0].classList.toggle("rotate-45");
+        lines[0].classList.toggle("top-4");
+        lines[2].classList.toggle("-rotate-45");
+        lines[2].classList.toggle("top-4");
+        lines[1].classList.toggle("opacity-0");
+      });
+    </script>
+
+    <style>
+      @media (max-width: 768px) {
+        #menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: white;
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+      }
+    </style>
+
+    <main class="mt-[200px] text-center">
       <img
         src="Foto Treasure/BONABONA.jpg"
         alt="Treasure Profile Banner"
-        width="auto"
-        height="500"
+        class="w-full h-[550px] object-cover"
       />
-
-            <h1>Welcome to the Treasure Profile</h1><br>
-      <p>
+      <h1 class="text-4xl mt-5">Welcome to the Treasure Profile</h1>
+      <br />
+      <p class="text-lg leading-relaxed max-w-2xl mx-auto">
         Then debuted on August 7, 2020, consisting of 10 members.<br />
         Namely Choi Hyun-suk, Park Jihoon, Yoshi, Junkyu, Yoon Jae-hyuk, Asahi,
         Doyoung, Haruto, Park Jeongwoo, and So Junghwan.<br />
         Choi Hyun-suk and Park Jihoon as the oldest members jointly share the
-        role of group leader.<br> One of the songs I like is Bonabona, released on
-        August 1, 2023. Below are its lyrics.<br><br>
+        role of group leader.<br />
+        One of the songs I like is Bonabona, released on August 1, 2023. Below
+        are its lyrics.<br /><br />
       </p>
-
-      <h1>BONABONA</h1>
-      <p>
+      <h1 class="text-4xl">BONABONA</h1>
+      <p class="text-lg">
         낮에 타는 태양 새벽의 별 같아<br />내 세상 속엔 네가 매일 떠오르니까
       </p>
-      <p>Baby, don't cry, 꽉 잡아 여길 떠나<br />너와 내가 영원할 곳으로</p>
-      <p>
+      <p class="text-lg">
+        Baby, don't cry, 꽉 잡아 여길 떠나<br />너와 내가 영원할 곳으로
+      </p>
+      <p class="text-lg">
         'Cause I can't stop, 도망가자, 여긴 폭탄<br />우릴 파괴하는 것들뿐이야
       </p>
-      <p>
+      <p class="text-lg">
         You are magic in my mind (my mind, my mind)<br />정해진 운명은 없다고
         하지만<br />
         수만 번 생각해 봐도 (봐도, 봐도)<br />눈을 뜨고 태어났을 때부터 난
       </p>
-      <p>
+      <p class="text-lg">
         Born to, born to, born to love ya (yeah, yeah)<br />Born to, born to,
         born to love ya (oh)<br />
         Born to, born to, born to love ya
       </p>
-      <p>
+      <p class="text-lg">
         Yeah, yeah, yeah, yeah (7Chill, go)<br />홀린 듯이 뒤꽁무니 쫓아가지<br />Yeah,
         yeah
       </p>
-      <a href="https://youtu.be/gxeyC1cPJsA?si=IDr7oLiR3Smj60p-" target="_blank"
+      <a
+        href="https://youtu.be/gxeyC1cPJsA?si=IDr7oLiR3Smj60p-"
+        class="text-blue-500"
+        target="_blank"
         >Listen to the song on YouTube</a
       >
     </main>
 
-    <footer class="footer__wrap">
-      <div class="footer__col">
-        <div class="footerLogo">
-          <a href="/treasure/" class="footerLogo--link">
-            <h1 class="footerLogo--img">TREASURE</h1>
-          </a>
-        </div>
-        <nav class="footerLinks">
-          <ul class="snsLists_footer">
-            <li class="snsList">
+    <footer class="bg-gray-900 text-white py-10 mt-10">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="text-2xl font-bold mb-6 text-center">TREASURE</h1>
+        <nav class="mb-6">
+          <ul class="flex justify-center space-x-6">
+            <li>
               <a
                 href="https://twitter.com/yg_treasure_jp"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/Logo_X.avif"
-                    alt="twitter"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">JAPAN OFFICIAL X</span>
+                <img
+                  src="Foto Treasure/Logo_X.avif"
+                  alt="Twitter Logo"
+                  class="w-10 h-10 bg-white rounded-full border-1 border-white"
+                />
+                JAPAN <br />
+                OFFICIAL X
               </a>
             </li>
-            <li class="snsList">
+            <li>
               <a
                 href="https://twitter.com/ygtreasuremaker"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/Logo_X.avif"
-                    alt="twitter"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">KOREA OFFICIAL X</span>
+                <img
+                  src="Foto Treasure/Logo_X.avif"
+                  alt="Twitter Logo"
+                  class="w-10 h-10 rounded-full border-1 border-white"
+                />
+                KOREA <br />
+                OFFICIAL X
               </a>
             </li>
-            <li class="snsList">
+            <li>
               <a
                 href="https://twitter.com/treasuremembers"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/Logo_X.avif"
-                    alt="twitter"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">MEMBER X</span>
+                <img
+                  src="Foto Treasure/Logo_X.avif"
+                  alt="Twitter Logo"
+                  class="w-10 h-10 rounded-full border-1 border-white"
+                />
+                MEMBER X
               </a>
             </li>
-            <li class="snsList">
+            <li>
               <a
                 href="https://www.instagram.com/yg_treasure_official/?hl=ja"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/Logo_IG.png"
-                    alt="instagram"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">Instagram</span>
+                <img
+                  src="Foto Treasure/Logo_IG.png"
+                  alt="Instagram Logo"
+                  class="w-10 h-10 rounded-full border-1 border-white"
+                />
+                Instagram
               </a>
             </li>
-            <li class="snsList">
+            <li>
               <a
                 href="https://lin.ee/jf8B1XZ"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/line.png"
-                    alt="line"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">LINE</span>
+                <img
+                  src="Foto Treasure/Logo_Line.png"
+                  alt="LINE Logo"
+                  class="w-10 h-10 bg-white rounded-full border-1 border-white"
+                />
+                Line
               </a>
             </li>
-            <li class="snsList">
+            <li>
               <a
                 href="https://www.youtube.com/channel/UCx9hXYOCvUYwrprEqe4ZQHA"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/Logo_YT.png"
-                    alt="twitter"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">YouTube</span>
+                <img
+                  src="Foto Treasure/Logo_YT.png"
+                  alt="YouTube Logo"
+                  class="w-10 h-10 rounded-full border-2 border-white"
+                />
+                YouTube
               </a>
             </li>
-            <li class="snsList">
+            <li>
               <a
                 href="https://www.facebook.com/OfficialTreasure/"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/FanClub.svg"
-                    alt="official fanclub"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">OFFICIAL<br />FANCLUB</span>
+                <img
+                  src="Foto Treasure/FanClub.svg"
+                  alt="fANCLUB Logo"
+                  class="w-10 h-10 bg-white rounded-full border-1 border-white"
+                />
+                OFFICIAL <br />
+                FANCLUB
               </a>
             </li>
-            <li class="snsList">
+            <li>
               <a
                 href="https://www.tiktok.com/@yg_treasure_tiktok"
                 target="_blank"
-                class="snsList--link"
+                class="hover:scale-110 transition-transform flex flex-col items-center text-center"
               >
-                <span class="snsList--icon">
-                  <img
-                    src="Foto Treasure/Logo_TT.jpg"
-                    alt="tiktok"
-                    class="snsList--img"
-                  />
-                </span>
-                <span class="snsList--title">TikTok</span>
+                <img
+                  src="Foto Treasure/Logo_TT.jpg"
+                  alt="TikTok Logo"
+                  class="w-10 h-10 rounded-full border-1 border-white"
+                />
+                TikTok
               </a>
             </li>
           </ul>
         </nav>
-      </div>
-      <div>
-        <ul>
-          <li><a href="https://fti.unai.edu/">FTI UNAI</a></li>
-          <li><a href="https://online.unai.edu">UNAI Website</a></li>
-          <li><a href="https://jurnal.unai.edu/">Jurnal Teika</a></li>
-        </ul>
+        <p class="text-center text-sm">
+          <a href="https://fti.unai.edu/" class="hover:underline">FTI UNAI</a>,
+          <a href="https://online.unai.edu" class="hover:underline"
+            >UNAI Website</a
+          >,
+          <a href="https://jurnal.unai.edu/" class="hover:underline"
+            >Jurnal Teika</a
+          >
+        </p>
       </div>
     </footer>
   </body>

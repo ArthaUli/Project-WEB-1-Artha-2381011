@@ -60,6 +60,35 @@
         </ul>
       </nav>
     </header>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const lines = menuToggle.querySelectorAll("span");
+
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        lines[0].classList.toggle("rotate-45");
+        lines[0].classList.toggle("top-4");
+        lines[2].classList.toggle("-rotate-45");
+        lines[2].classList.toggle("top-4");
+        lines[1].classList.toggle("opacity-0");
+      });
+    </script>
+
+    <style>
+      @media (max-width: 768px) {
+        #menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: white;
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+      }
+    </style>
+
     <br />
     <br />
     <br />
@@ -85,6 +114,7 @@
                   id="full_name"
                   name="full_name"
                   required
+                  placeholder="Enter Full Name"
                   class="border border-gray-300 rounded p-2 w-full"
                 />
               </div>
@@ -97,6 +127,7 @@
                   id="student_id"
                   name="student_id"
                   required
+                  placeholder="Enter Student ID (NIM)"
                   class="border border-gray-300 rounded p-2 w-full"
                 />
               </div>
@@ -109,6 +140,7 @@
                   id="email"
                   name="email"
                   required
+                  placeholder="Enter Email or Phone Number"
                   class="border border-gray-300 rounded p-2 w-full"
                 />
               </div>
@@ -120,6 +152,7 @@
                   id="faculty_major"
                   name="faculty_major"
                   required
+                  placeholder="Enter a valid phone number (10-12 digits)"
                   class="border border-gray-300 rounded p-2 w-full"
                 >
                   <option value="" disabled selected>Select a faculty</option>
@@ -144,6 +177,7 @@
                   id="birthdate"
                   name="birthdate"
                   required
+                  placeholder="Enter a valid phone number (10-12 digits)"
                   class="border border-gray-300 rounded p-2 w-full"
                 />
               </div>
@@ -179,6 +213,7 @@
                   name="address"
                   rows="3"
                   required
+                  placeholder="Enter an Address"
                   class="border border-gray-300 rounded p-2 w-full"
                 ></textarea>
               </div>
